@@ -1,0 +1,20 @@
+//--
+  - It contains template for default layout.
+  -/
+
+v-app
+  v-app-bar(
+    color="white"
+    flat app 
+  )
+    v-app-bar-title
+      v-img.justify-left(
+        ref    = "image_logo"
+        :src   = "memoryGameLogo"
+        height = "42"
+        width  = "70"
+        contain
+      )
+    span.text-h5 Memory game
+  v-main
+    slot
