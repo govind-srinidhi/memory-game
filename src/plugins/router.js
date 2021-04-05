@@ -29,12 +29,12 @@ const router = new Router({
       path: "/results",
       name: "results",
       meta: {
-        layout: "Blank"
+        layout: "Default"
       },
       component: () => import(/* webpackChunkName: "home" */ "@/views/results")
     }
   ]
 })
 
-router.beforeEach(routeCheck);
+router.beforeEach(routeCheck)
 export default router
