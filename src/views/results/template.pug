@@ -1,0 +1,20 @@
+//--
+  - It contains template for results overview page.
+  -/
+v-container
+  .d-block.pa-4.subtitle-1.text-center {{ resultMessage }}
+  v-data-table.elevation-1(
+    ref              = "table_results"  
+    item-key         = "value"
+    :items           = "resultsForTable"
+    :headers         = "headersForTable"
+    :no-data-text    = "$TABLES.RESULTS.noDataText"
+    :footer-props    = "footersForTable"
+    :items-per-page  = "$TABLES.RESULTS.itemsPerPage"
+    fixed-header multi-sort
+  )
+  v-btn.mt-4(
+    color      = "primary lighten-2"
+    text-color = "black"
+    @click     = "() => $router.replace('/')"
+  ) {{ $CONSTANTS.LABELS.PLAY_AGAIN }}
