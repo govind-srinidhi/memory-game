@@ -4,17 +4,17 @@
 
 v-app
   v-app-bar(
-    color="white"
+    color="info"
     flat app 
   )
     v-app-bar-title
       v-img.justify-left(
         ref    = "image_logo"
-        :src   = "memoryGameLogo"
+        src    = "@/assets/images/memory-game-logo.svg"
         height = "42"
-        width  = "70"
+        width  = "50"
         contain
       )
-    span.text-h5 Memory game
+    span.subtitle-1 Memory test
   v-main
     slot
