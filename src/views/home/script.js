@@ -1,6 +1,9 @@
 /**
  * @file It contains the script for home page.
  */
+
+ import { mapGetters, mapMutations } from "vuex"
+
 export default {
   name: "Home",
   data() {
@@ -9,40 +12,56 @@ export default {
       possibleNumberOfCards: [4, 8, 12, 16],
       randomValues: Array(),
       sortedRandomValues: Array(),
-      selectedValues: Array(),
       isGameStarted: false,
-      isGameOver: false
+      numberOfItemsProcessed: 0
     }
   },
+  computed: {
+    ...mapGetters({
+      userAnswers: "results/userAnswers"
+    })
+  },
   methods: {
+    ...mapMutations({
+      pushUserAnswer: "results/pushUserAnswer"
+    }),
     generateRandomValues() {
-      this.reset();
+      this.reset()
       for (let i = 0; i < this.numberOfCards; i++) {
-        this.randomValues.push({ value: Math.floor(Math.random() * 100) });
+        this.randomValues.push({ value: Math.floor(Math.random() * 100) })
       }
     },
     startGame() {
-      this.sortedRandomValues = this.randomValues.flatMap(element => element.value).sort((element1, element2) => (element1 - element2));
-      this.isGameStarted = true;
+      this.sortedRandomValues = this.randomValues.flatMap(element => element.value).sort((element1, element2) => (element1 - element2))
+      this.isGameStarted = true
     },
     validateOrder(element, index) {
-      let isValid, textColor;
-      if (this.sortedRandomValues[0] == element.value) {
-        isValid = "Correct";
-        textColor = "success--text";
+      let valid, color
+      if (this.sortedRandomValues[this.numberOfItemsProcessed++] == element.value) {
+        valid = this.$CONSTANTS.GAME_RESULTS.CORRECT
+        color = "success--text"
       } else {
-        isValid = "Incorrect";
-        textColor = "error--text";
+        valid = this.$CONSTANTS.GAME_RESULTS.INCORRECT
+        color = "error--text"
       }
-      this.sortedRandomValues.shift(1);
-      this.randomValues.splice(index, 1, { ...this.randomValues[index], selected: true, isValid, color: textColor });
-      this.selectedValues.push({ value: element.value, date: new Date() });
-      if (this.sortedRandomValues.length == 0) this.isGameOver = true;
+      this.randomValues.splice(index, 1, { ...this.randomValues[index], selected: true, valid, color })
+      this.pushUserAnswer({ value: element.value, date: new Date(), valid })
     },
     reset() {
-      this.randomValues = [];
-      this.sortedRandomValues = [];
-      this.isGameStarted = false;
+      this.randomValues = []
+      this.sortedRandomValues = []
+      this.isGameStarted = false
+    }
+  },
+
+  watch: {
+    userAnswers: {
+      handler: function(value) {
+        if (value.length === this.randomValues.length) {
+          this.$router.replace("results")
+        }
+      }
     }
   }
+
 }
