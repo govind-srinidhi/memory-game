@@ -1,0 +1,36 @@
+//--
+  - It contains template for memory app home page.
+  -/
+v-container.pa-3.ml-6
+  v-row
+    v-col.col-md-3
+      v-select(
+        :items    = "possibleNumberOfCards"
+        label     = "Number of cards"
+        v-model   = "numberOfCards"
+        @change   = "generateRandomValues()"
+        :disabled = "isGameStarted"
+      )
+    v-col.col-md-3
+      v-btn.mt-4(
+        color     = "primary"
+        @click    = "startGame()"
+        :disabled = "isGameStarted || numberOfCards == -1"
+      ) Play
+  v-row
+    v-col.col-md-2.offset-md-1(
+      v-for = "(randomValue, index) in randomValues"
+      :key  = `randomValue.value__${new Date().getTime()}`
+    )
+      v-card.elevation-2(
+        height    = "150"
+        :disabled = "randomValue.selected"
+        @click    = "isGameStarted && !isGameOver ? validateOrder(randomValue, index) : {}"
+      )
+        v-card-title.pa-0.justify-center(v-if = "isGameStarted") 
+          .d-block.text-center.subtitle-1(:class = "randomValue.color") {{ randomValue.isValid }}
+        v-card-text
+          .d-block.text-center(
+            :class = "randomValue.isValid ? 'pt-5' : 'pt-7'"
+          )
+            span.font-weight-bold.text-h2(v-if="!isGameStarted || randomValue.selected") {{ randomValue.value }}
