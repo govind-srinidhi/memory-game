@@ -18,7 +18,6 @@ export default async (to, from, next) => {
  * This method will be called before navigating to home page.
  */
 const beforeHome = () => {
-  console.log("yes!")
   store.commit("results/setUserAnswers", [])
 }
 
