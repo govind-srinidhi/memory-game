@@ -6,6 +6,7 @@ export default {
   LABELS: {
     NUMBER_OF_CARDS: "Number of cards",
     PLAY: "Play",
-    PLAY_AGAIN: "Play again"
+    PLAY_AGAIN: "Play again",
+    PAGE_UNAVAILABLE: "Page not found"
   }
 }

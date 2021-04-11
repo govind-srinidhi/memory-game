@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`results page renders the results page 1`] = `
+<div class="container">
+  <div class="d-block pa-4 subtitle-1 text-center">You've answered 50% of questions correctly! Review your response</div>
+  <div class="v-data-table elevation-1 v-data-table--fixed-header v-data-table--has-bottom theme--light">
+    <div class="v-data-table__wrapper">
+      <table>
+        <colgroup>
+          <col class="">
+          <col class="">
+          <col class="">
+        </colgroup>
+        <thead class="v-data-table-header">
+          <tr>
+            <th role="columnheader" scope="col" aria-label="Value: Not sorted. Activate to sort ascending." aria-sort="none" class="text-left subheading primary lighten-2 white--text subtitle-2 font-weight-bold sortable"><span>Value</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+            <th role="columnheader" scope="col" aria-label="Time: Not sorted. Activate to sort ascending." aria-sort="none" class="text-left subheading primary lighten-2 white--text subtitle-2 font-weight-bold sortable"><span>Time</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+            <th role="columnheader" scope="col" aria-label="Valid: Not sorted. Activate to sort ascending." aria-sort="none" class="text-left subheading primary lighten-2 white--text subtitle-2 font-weight-bold sortable"><span>Valid</span><i aria-hidden="true" class="v-icon notranslate v-data-table-header__icon mdi mdi-arrow-up theme--light" style="font-size: 18px;"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="">
+            <td class="text-left">23</td>
+            <td class="text-left">4/11/2021, 7:30:00 PM</td>
+            <td class="text-left">Incorrect</td>
+          </tr>
+          <tr class="">
+            <td class="text-left">1</td>
+            <td class="text-left">4/11/2021, 7:30:01 PM</td>
+            <td class="text-left">Incorrect</td>
+          </tr>
+          <tr class="">
+            <td class="text-left">44</td>
+            <td class="text-left">4/11/2021, 7:30:02 PM</td>
+            <td class="text-left">Correct</td>
+          </tr>
+          <tr class="">
+            <td class="text-left">45</td>
+            <td class="text-left">4/11/2021, 7:30:03 PM</td>
+            <td class="text-left">Correct</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="v-data-footer">
+      <div class="v-data-footer__select">Items per page<div class="v-input v-input--hide-details v-input--is-label-active v-input--is-dirty theme--light v-text-field v-select">
+          <div class="v-input__control">
+            <div role="button" aria-haspopup="listbox" aria-expanded="false" aria-owns="list-12" class="v-input__slot">
+              <div class="v-select__slot">
+                <div class="v-select__selections">
+                  <div class="v-select__selection v-select__selection--comma">10</div><input aria-label="Items per page" id="input-12" readonly="readonly" type="text" aria-readonly="false" autocomplete="off">
+                </div>
+                <div class="v-input__append-inner">
+                  <div class="v-input__icon v-input__icon--append"><i aria-hidden="true" class="v-icon notranslate mdi mdi-menu-down theme--light"></i></div>
+                </div><input type="hidden" value="10">
+              </div>
+              <div class="v-menu">
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="v-data-footer__pagination">1-4 of 4</div>
+      <div class="v-data-footer__icons-before"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="First page"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-page-first theme--light"></i></span></button><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="Previous page"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-left theme--light"></i></span></button></div><span>1</span>
+      <div class="v-data-footer__icons-after"><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="Next page"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-chevron-right theme--light"></i></span></button><button type="button" disabled="disabled" class="v-btn v-btn--disabled v-btn--icon v-btn--round v-btn--text theme--light v-size--default" aria-label="Last page"><span class="v-btn__content"><i aria-hidden="true" class="v-icon notranslate mdi mdi-page-last theme--light"></i></span></button></div>
+    </div>
+  </div><button type="button" class="mt-4 v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary lighten-2" text-color="black"><span class="v-btn__content">Play again</span></button>
+</div>
+`;
