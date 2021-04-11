@@ -2,7 +2,7 @@
   - It contains template for the not found
   -/ 
 v-container(fluid)
-  .d-block.text-center.text-h4.font-weight-bold Page not found
+  .d-block.text-center.text-h4.not-found-header {{ $CONSTANTS.LABELS.PAGE_UNAVAILABLE }}
   v-img.mt-12(
     ref    = "image_not_found"
     src    = "~@/assets/images/not-found.svg"
