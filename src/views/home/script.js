@@ -2,7 +2,7 @@
  * @file It contains the script for home page.
  */
 
- import { mapGetters, mapMutations } from "vuex"
+import { mapGetters, mapMutations } from "vuex"
 
 export default {
   name: "Home",
@@ -27,9 +27,11 @@ export default {
     }),
     generateRandomValues() {
       this.reset()
-      for (let i = 0; i < this.numberOfCards; i++) {
-        this.randomValues.push({ value: Math.floor(Math.random() * 100) })
+      const uniqueValues = new Set()
+      while (uniqueValues.size < this.numberOfCards) {
+        uniqueValues.add(Math.floor(Math.random() * 100))
       }
+      this.randomValues = [...uniqueValues].map((element) => ({ value: element }))
     },
     startGame() {
       this.sortedRandomValues = this.randomValues.flatMap(element => element.value).sort((element1, element2) => (element1 - element2))
@@ -56,7 +58,7 @@ export default {
 
   watch: {
     userAnswers: {
-      handler: function(value) {
+      handler: function (value) {
         if (value.length === this.randomValues.length) {
           this.$router.replace("results")
         }
