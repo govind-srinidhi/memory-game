@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home page matches the default snapshot 1`] = `
+<div class="container container--fluid">
+  <div class="d-block text-center text-h4 not-found-header"></div>
+  <div class="v-image v-responsive mt-12 theme--light" style="height: 650px;">
+    <transition-stub name="fade-transition" mode="in-out">
+      <div class="v-image__image v-image__image--preload v-image__image--contain" style="background-position: center center;"></div>
+    </transition-stub>
+    <div class="v-responsive__content"></div>
+  </div>
+</div>
+`;
